@@ -9,7 +9,7 @@ export default function EnquirySection() {
           badge="Contact"
           title="Book Trial or"
           highlight="Enquiry form"
-          subtitle="One form for free trial, membership, or any question. We reply quickly on WhatsApp."
+          subtitle="One form for free trial, membership, or any question. We'll get back to you soon."
         />
         <div className="max-w-2xl mx-auto">
           <EnquiryForm />

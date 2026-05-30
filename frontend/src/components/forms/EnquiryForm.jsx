@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Send } from 'lucide-react'
-import { SITE, whatsappUrl } from '../../config/site'
+import { CheckCircle2, Loader2, Send, X } from 'lucide-react'
+import { SITE, WEB3FORMS_ENDPOINT, getWeb3FormsAccessKey } from '../../config/site'
 
 const initial = {
   name: '',
@@ -13,41 +13,99 @@ const initial = {
 
 export default function EnquiryForm({ compact = false }) {
   const [form, setForm] = useState(initial)
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false)
 
   const update = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
   }
 
-  const buildWhatsAppMessage = () => {
-    let msg = `*Contact — ${SITE.name}*\n`
-    msg += `Name: ${form.name}\n`
-    msg += `Phone: ${form.phone}\n`
-    if (form.email) msg += `Email: ${form.email}\n`
-    if (form.address) msg += `Address: ${form.address}\n`
-    msg += `Interest: ${form.interest}\n`
-    if (form.message) msg += `\nMessage: ${form.message}`
-    return msg
-  }
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    window.open(whatsappUrl(buildWhatsAppMessage()), '_blank', 'noreferrer')
-    setSubmitted(true)
-  }
+    setStatus('sending')
+    setErrorMessage('')
 
-  if (submitted) {
-    return (
-      <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/10 p-8 text-center">
-        <p className="text-lg font-semibold text-white">Thank you!</p>
-        <p className="mt-2 text-[#9ca3af]">
-          Your message was sent via WhatsApp. Our team will contact you shortly.
-        </p>
-      </div>
-    )
+    const accessKey = getWeb3FormsAccessKey()
+    if (!accessKey) {
+      setStatus('error')
+      setErrorMessage('Form is not configured. Add VITE_WEB3FORMS_ACCESS_KEY to .env')
+      return
+    }
+
+    const formData = new FormData()
+    formData.append('access_key', accessKey)
+    formData.append('subject', `New enquiry — ${SITE.name}`)
+    formData.append('from_name', form.name)
+    formData.append('name', form.name)
+    formData.append('phone', form.phone)
+    formData.append('email', form.email)
+    formData.append('address', form.address)
+    formData.append('interest', form.interest)
+    formData.append('message', form.message)
+
+    try {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+      })
+      const data = await response.json()
+
+      if (data.success) {
+        setForm(initial)
+        setStatus('idle')
+        setShowSuccessPopup(true)
+        return
+      }
+
+      setStatus('error')
+      setErrorMessage(data.message || 'Something went wrong. Please try again.')
+    } catch {
+      setStatus('error')
+      setErrorMessage('Network error. Please check your connection and try again.')
+    }
   }
 
   return (
+    <>
+      {showSuccessPopup && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="enquiry-success-title"
+          onClick={() => setShowSuccessPopup(false)}
+        >
+          <div
+            className="relative w-full max-w-md rounded-2xl border border-cyan-500/30 bg-[#0c0c12] p-8 text-center shadow-2xl zeno-glow"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setShowSuccessPopup(false)}
+              className="absolute right-4 top-4 rounded-lg p-1 text-white/60 hover:bg-white/10 hover:text-white"
+              aria-label="Close"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <CheckCircle2 className="mx-auto h-14 w-14 text-cyan-400" />
+            <p id="enquiry-success-title" className="mt-4 text-xl font-semibold text-white">
+              Thank you!
+            </p>
+            <p className="mt-2 text-[#9ca3af]">
+              Your enquiry was submitted successfully. Our team will contact you shortly.
+            </p>
+            <button
+              type="button"
+              onClick={() => setShowSuccessPopup(false)}
+              className="mt-6 w-full rounded-full zeno-gradient py-3 font-semibold text-white transition hover:opacity-90"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+
     <form
       onSubmit={handleSubmit}
       className={`space-y-4 ${compact ? '' : 'rounded-2xl border border-white/10 bg-[#0c0c12] p-6 sm:p-8'}`}
@@ -60,7 +118,8 @@ export default function EnquiryForm({ compact = false }) {
             required
             value={form.name}
             onChange={update}
-            className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50"
+            disabled={status === 'sending'}
+            className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50 disabled:opacity-60"
             placeholder="Your name"
           />
         </div>
@@ -72,7 +131,8 @@ export default function EnquiryForm({ compact = false }) {
             required
             value={form.phone}
             onChange={update}
-            className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50"
+            disabled={status === 'sending'}
+            className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50 disabled:opacity-60"
             placeholder="+91 XXXXX XXXXX"
           />
         </div>
@@ -84,7 +144,8 @@ export default function EnquiryForm({ compact = false }) {
           type="email"
           value={form.email}
           onChange={update}
-          className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50"
+          disabled={status === 'sending'}
+          className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50 disabled:opacity-60"
           placeholder="you@email.com"
         />
       </div>
@@ -95,7 +156,8 @@ export default function EnquiryForm({ compact = false }) {
           required
           value={form.address}
           onChange={update}
-          className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50"
+          disabled={status === 'sending'}
+          className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50 disabled:opacity-60"
           placeholder="Your area / full address in Nagpur"
         />
       </div>
@@ -105,7 +167,8 @@ export default function EnquiryForm({ compact = false }) {
           name="interest"
           value={form.interest}
           onChange={update}
-          className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50"
+          disabled={status === 'sending'}
+          className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50 disabled:opacity-60"
         >
           <option value="membership">Membership</option>
           <option value="trial">Free Trial</option>
@@ -121,17 +184,36 @@ export default function EnquiryForm({ compact = false }) {
           rows={4}
           value={form.message}
           onChange={update}
-          className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50 resize-none"
+          disabled={status === 'sending'}
+          className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50 resize-none disabled:opacity-60"
           placeholder="Tell us about your fitness goals..."
         />
       </div>
+
+      {status === 'error' && (
+        <p className="text-sm text-red-400" role="alert">
+          {errorMessage}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="w-full inline-flex items-center justify-center gap-2 rounded-full zeno-gradient py-3.5 font-semibold text-white transition hover:opacity-90"
+        disabled={status === 'sending'}
+        className="w-full inline-flex items-center justify-center gap-2 rounded-full zeno-gradient py-3.5 font-semibold text-white transition hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        <Send className="h-5 w-5" />
-        Send via WhatsApp
+        {status === 'sending' ? (
+          <>
+            <Loader2 className="h-5 w-5 animate-spin" />
+            Sending…
+          </>
+        ) : (
+          <>
+            <Send className="h-5 w-5" />
+            Submit Enquiry
+          </>
+        )}
       </button>
     </form>
+    </>
   )
 }

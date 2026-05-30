@@ -1,13 +1,14 @@
 import { useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { LogIn, Menu, X } from 'lucide-react'
 import Logo from '../ui/Logo'
+import { scrollToSectionWhenReady } from '../../lib/scrollToSection'
 
 const navLinks = [
-  { to: '/#about', label: 'About', hash: true },
-  { to: '/#what-we-offer', label: 'What We Offer', hash: true },
+  { hash: '#about', label: 'About' },
+  { hash: '#what-we-offer', label: 'What We Offer' },
   { to: '/services', label: 'Services' },
-  { to: '/#trainers', label: 'Trainers', hash: true },
+  { hash: '#trainers', label: 'Trainers' },
   { to: '/location', label: 'Location' },
   { to: '/about', label: 'About Us' },
   { to: '/contact', label: 'Contact' },
@@ -16,12 +17,19 @@ const navLinks = [
 export default function Header() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
-  const handleNav = (to, hash) => {
+  const goToSection = (e, hash) => {
+    e.preventDefault()
     setOpen(false)
-    if (hash && location.pathname !== '/') {
-      window.location.href = to
+
+    if (location.pathname === '/') {
+      navigate({ pathname: '/', hash })
+      scrollToSectionWhenReady(hash)
+      return
     }
+
+    navigate({ pathname: '/', hash })
   }
 
   return (
@@ -31,12 +39,12 @@ export default function Header() {
           <Logo className="h-9 w-auto max-w-[150px] sm:h-10 sm:max-w-[190px]" />
 
           <ul className="hidden lg:flex items-center gap-1">
-            {navLinks.map(({ to, label, hash }) => (
-              <li key={to + label}>
+            {navLinks.map(({ hash, to, label }) => (
+              <li key={(hash || to) + label}>
                 {hash ? (
                   <a
-                    href={to}
-                    onClick={() => handleNav(to, hash)}
+                    href={hash}
+                    onClick={(e) => goToSection(e, hash)}
                     className="rounded-full px-4 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-white"
                   >
                     {label}
@@ -80,13 +88,13 @@ export default function Header() {
         {open && (
           <div className="mt-2 rounded-2xl border border-white/10 bg-black/95 p-4 backdrop-blur-xl lg:hidden">
             <ul className="flex flex-col gap-1">
-              {navLinks.map(({ to, label, hash }) => (
-                <li key={to + label}>
+              {navLinks.map(({ hash, to, label }) => (
+                <li key={(hash || to) + label}>
                   {hash ? (
                     <a
-                      href={to}
+                      href={hash}
                       className="block rounded-lg px-4 py-3 text-white/90 hover:bg-white/10"
-                      onClick={() => setOpen(false)}
+                      onClick={(e) => goToSection(e, hash)}
                     >
                       {label}
                     </a>

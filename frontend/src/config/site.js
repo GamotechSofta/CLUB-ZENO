@@ -3,9 +3,9 @@ export const SITE = {
   name: 'CLUB ZENO',
   legalName: 'CLUB ZENO',
   tagline: 'Premium Fitness Center in Nagpur',
-  phone: '+919876543210',
-  phoneDisplay: '+91 98765 43210',
-  whatsapp: '919876543210',
+  phone: '+919699237168',
+  phoneDisplay: '+91 96992 37168',
+  whatsapp: '919699237168',
   email: 'info@clubzeno.in',
   address: {
     line1: 'Corporate Rooftop, Opposite Westside Mall',
@@ -56,6 +56,13 @@ export function whatsappUrl(message) {
 
 export function telUrl() {
   return `tel:${SITE.phone.replace(/\s/g, '')}`
+}
+
+/** Web3Forms — set VITE_WEB3FORMS_ACCESS_KEY in frontend/.env */
+export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit'
+
+export function getWeb3FormsAccessKey() {
+  return import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? ''
 }
 
 export const TRAINERS = [

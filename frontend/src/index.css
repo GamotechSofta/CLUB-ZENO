@@ -16,6 +16,11 @@
   body {
     @apply m-0 min-h-svh antialiased bg-[#050508] text-white font-sans;
   }
+
+  /* Fixed header — smooth scroll lands below navbar */
+  section[id] {
+    scroll-margin-top: 6.5rem;
+  }
 }
 
 @layer utilities {
