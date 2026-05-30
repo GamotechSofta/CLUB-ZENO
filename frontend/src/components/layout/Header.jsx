@@ -5,9 +5,9 @@ import Logo from '../ui/Logo'
 
 const navLinks = [
   { to: '/#about', label: 'About', hash: true },
-  { to: '/#services', label: 'Services', hash: true },
+  { to: '/#what-we-offer', label: 'What We Offer', hash: true },
+  { to: '/services', label: 'Services' },
   { to: '/#trainers', label: 'Trainers', hash: true },
-  { to: '/#pricing', label: 'Pricing', hash: true },
   { to: '/location', label: 'Location' },
   { to: '/about', label: 'About Us' },
   { to: '/contact', label: 'Contact' },

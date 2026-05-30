@@ -64,6 +64,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/services" className="hover:text-cyan-400 transition">
+                  Services
+                </Link>
+              </li>
+              <li>
                 <Link to="/location" className="hover:text-cyan-400 transition">
                   Location
                 </Link>

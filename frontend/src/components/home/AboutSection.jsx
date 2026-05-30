@@ -18,7 +18,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="zeno-border-glow rounded-2xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=600&fit=crop"
+                src="https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140252/5604e4d3-b77e-454c-bc0e-a3bead1324f2.png"
                 alt="CLUB ZENO gym interior Nagpur"
                 className="w-full aspect-[4/3] object-cover"
               />

@@ -58,57 +58,6 @@ export function telUrl() {
   return `tel:${SITE.phone.replace(/\s/g, '')}`
 }
 
-export const SERVICES = [
-  {
-    id: 'ai-modes',
-    title: 'AI Modes',
-    description:
-      'Smart training modes powered by AI-guided programs tailored to your goals, recovery, and progress.',
-    icon: 'cpu',
-    accent: 'from-blue-600 to-cyan-400',
-  },
-  {
-    id: 'kettlebell',
-    title: 'Kettlebell',
-    description:
-      'Functional kettlebell sessions for strength, conditioning, and athletic performance.',
-    icon: 'dumbbell',
-    accent: 'from-indigo-600 to-blue-400',
-  },
-  {
-    id: 'crossfit-hiit',
-    title: 'CrossFit HIIT',
-    description:
-      'High-intensity CrossFit and HIIT workouts that burn fat and build elite endurance.',
-    icon: 'flame',
-    accent: 'from-violet-600 to-cyan-400',
-  },
-  {
-    id: 'resistance',
-    title: 'Resistance Training',
-    description:
-      'Premium resistance machines, cables, and free weights for serious muscle building.',
-    icon: 'activity',
-    accent: 'from-blue-700 to-teal-400',
-  },
-  {
-    id: 'recovery',
-    title: 'Recovery & Sauna',
-    description:
-      'Dedicated recovery zone with sauna access to recharge muscles and reduce soreness.',
-    icon: 'heart-pulse',
-    accent: 'from-cyan-600 to-emerald-400',
-  },
-  {
-    id: 'pilates-compound',
-    title: 'Slider Pilates & Compound Movement',
-    description:
-      'Core-focused slider pilates for flexibility, posture, and controlled strength—plus expert-led compound lifts (squats, deadlifts, presses) for real-world strength.',
-    icon: 'layers',
-    accent: 'from-sky-600 to-cyan-500',
-  },
-]
-
 export const TRAINERS = [
   {
     name: 'Arjun Mehta',
@@ -214,9 +163,9 @@ export const HERO_SLIDES = [
   {
     id: 'hero-1',
     image:
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop&q=80',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140380/1e752683-ff74-46f1-867b-6338a54ade30.png',
     imageMobile:
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=768&h=1152&fit=crop&q=80&crop=edges',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140764/b58ff1a3-bb83-41ec-a303-eb3423b2a458.png',
     badge: 'Premium Fitness Center',
     title: 'Build Your',
     highlight: 'Dream Physique',
@@ -226,9 +175,9 @@ export const HERO_SLIDES = [
   {
     id: 'hero-2',
     image:
-      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&h=1080&fit=crop&q=80',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140404/a6a5f79f-e8eb-4819-bdbf-3fc2d0c1010e.png',
     imageMobile:
-      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=768&h=1152&fit=crop&q=80&crop=edges',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780141014/15789dcf-ab5d-4d3f-a403-9f8fb7f35b13.png',
     badge: 'Opposite Westside Mall',
     title: 'Train at',
     highlight: 'CLUB ZENO',
@@ -238,9 +187,9 @@ export const HERO_SLIDES = [
   {
     id: 'hero-3',
     image:
-      'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1920&h=1080&fit=crop&q=80',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140442/4b8cfd66-6b27-405c-99cf-9152ce91df0a.png',
     imageMobile:
-      'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=768&h=1152&fit=crop&q=80&crop=edges',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780141072/b4401047-622b-4199-8721-74f502b1a667.png',
     badge: 'Book a Free Trial',
     title: 'Start Your',
     highlight: 'Fitness Journey',

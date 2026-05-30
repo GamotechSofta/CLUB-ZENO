@@ -71,10 +71,10 @@ export default function Hero() {
               Join Now
             </a>
             <a
-              href="#pricing"
+              href="#contact"
               className="inline-flex rounded-full border border-white/30 px-8 py-3.5 font-semibold text-white transition hover:bg-white/10"
             >
-              View Plans
+              Contact Us
             </a>
           </div>
         </div>
