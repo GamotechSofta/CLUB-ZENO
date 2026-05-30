@@ -1,4 +1,3 @@
-import { Share2 } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
 import { TRAINERS } from '../../config/site'
 
@@ -14,31 +13,24 @@ export default function TrainersSection() {
         />
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
-          {TRAINERS.map((trainer, i) => (
+          {TRAINERS.map((trainer) => (
             <article
-              key={trainer.name}
-              className={`group relative rounded-2xl overflow-hidden aspect-[3/4] ${
-                i === 2 ? 'lg:scale-105 zeno-border-glow' : 'border border-white/10'
-              }`}
+              key={trainer.id}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c12] aspect-[3/4] transition hover:border-cyan-500/40"
             >
-              <img
-                src={trainer.image}
-                alt={trainer.name}
-                className="absolute inset-0 h-full w-full object-cover transition group-hover:scale-105 duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-              <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition">
-                <a
-                  href={trainer.social.instagram}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-black/60 backdrop-blur text-white hover:bg-cyan-500/80"
-                  aria-label={`${trainer.name} Instagram`}
-                >
-                  <Share2 className="h-4 w-4" />
-                </a>
+              <div className="flex flex-1 items-center justify-center border-b border-dashed border-white/10 bg-gradient-to-br from-[#12121a] via-[#0c0c12] to-[#080810]">
+                <p className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-white/30 px-2 text-center">
+                  Image placeholder
+                </p>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5">
-                <h3 className="text-sm sm:text-lg font-bold leading-tight">{trainer.name}</h3>
-                <p className="text-xs sm:text-sm text-cyan-400 line-clamp-2">{trainer.role}</p>
+
+              <div className="p-3 sm:p-5 bg-gradient-to-t from-[#0c0c12] to-[#0c0c12]">
+                <h3 className="text-sm sm:text-lg font-bold leading-tight text-white">
+                  {trainer.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-cyan-400 line-clamp-2 mt-0.5">
+                  {trainer.role}
+                </p>
               </div>
             </article>
           ))}

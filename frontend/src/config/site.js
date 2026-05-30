@@ -60,31 +60,27 @@ export function telUrl() {
 
 export const TRAINERS = [
   {
+    id: 'trainer-1',
     name: 'Arjun Mehta',
     role: 'Head Strength Coach',
-    image:
-      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50c?w=600&h=800&fit=crop',
     social: { instagram: '#', twitter: '#' },
   },
   {
+    id: 'trainer-2',
     name: 'Priya Sharma',
     role: 'HIIT & Pilates Specialist',
-    image:
-      'https://images.unsplash.com/photo-1594381898411-8465977c4a9f?w=600&h=800&fit=crop',
     social: { instagram: '#', twitter: '#' },
   },
   {
+    id: 'trainer-3',
     name: 'Rahul Deshmukh',
     role: 'CrossFit & Conditioning',
-    image:
-      'https://images.unsplash.com/photo-1633332755192-727a05c4013b?w=600&h=800&fit=crop',
     social: { instagram: '#', twitter: '#' },
   },
   {
+    id: 'trainer-4',
     name: 'Ananya Kulkarni',
     role: 'Recovery & Nutrition',
-    image:
-      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop',
     social: { instagram: '#', twitter: '#' },
   },
 ]
