@@ -100,20 +100,12 @@ export const SERVICES = [
     accent: 'from-cyan-600 to-emerald-400',
   },
   {
-    id: 'pilates',
-    title: 'Slider Pilates',
+    id: 'pilates-compound',
+    title: 'Slider Pilates & Compound Movement',
     description:
-      'Core-focused slider pilates for flexibility, posture, and controlled strength.',
-    icon: 'wind',
-    accent: 'from-sky-600 to-cyan-300',
-  },
-  {
-    id: 'compound',
-    title: 'Compound Movement',
-    description:
-      'Expert-led compound lifts—squats, deadlifts, presses—for real-world strength.',
-    icon: 'trending-up',
-    accent: 'from-blue-500 to-cyan-500',
+      'Core-focused slider pilates for flexibility, posture, and controlled strength—plus expert-led compound lifts (squats, deadlifts, presses) for real-world strength.',
+    icon: 'layers',
+    accent: 'from-sky-600 to-cyan-500',
   },
 ]
 
@@ -217,10 +209,14 @@ export const TESTIMONIALS = [
   },
 ]
 
+// Same 3 photos as desktop; imageMobile = portrait crop for phones (768×1152)
 export const HERO_SLIDES = [
   {
+    id: 'hero-1',
     image:
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop',
+      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop&q=80',
+    imageMobile:
+      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=768&h=1152&fit=crop&q=80&crop=edges',
     badge: 'Premium Fitness Center',
     title: 'Build Your',
     highlight: 'Dream Physique',
@@ -228,8 +224,11 @@ export const HERO_SLIDES = [
       'Premium fitness experience in Nagpur with expert trainers, AI modes, and rooftop training.',
   },
   {
+    id: 'hero-2',
     image:
-      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&h=1080&fit=crop',
+      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&h=1080&fit=crop&q=80',
+    imageMobile:
+      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=768&h=1152&fit=crop&q=80&crop=edges',
     badge: 'Opposite Westside Mall',
     title: 'Train at',
     highlight: 'CLUB ZENO',
@@ -237,8 +236,11 @@ export const HERO_SLIDES = [
       'CrossFit HIIT, kettlebell, resistance training & recovery—on Wardha Road, Nagpur.',
   },
   {
+    id: 'hero-3',
     image:
-      'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1920&h=1080&fit=crop',
+      'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1920&h=1080&fit=crop&q=80',
+    imageMobile:
+      'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=768&h=1152&fit=crop&q=80&crop=edges',
     badge: 'Book a Free Trial',
     title: 'Start Your',
     highlight: 'Fitness Journey',

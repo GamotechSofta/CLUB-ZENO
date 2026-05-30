@@ -4,8 +4,7 @@ import {
   Flame,
   Activity,
   HeartPulse,
-  Wind,
-  TrendingUp,
+  Layers,
 } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
 import { SERVICES } from '../../config/site'
@@ -16,13 +15,12 @@ const iconMap = {
   flame: Flame,
   activity: Activity,
   'heart-pulse': HeartPulse,
-  wind: Wind,
-  'trending-up': TrendingUp,
+  layers: Layers,
 }
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 sm:py-28 bg-[#030306]">
+    <section id="services" className="pt-8 pb-8 sm:pt-10 sm:pb-10 bg-[#030306]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Everything You Need to"
@@ -30,7 +28,7 @@ export default function ServicesSection() {
           subtitle="From AI modes to recovery & sauna — a complete ecosystem for your fitness journey at CLUB ZENO, Nagpur."
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((service) => {
             const Icon = iconMap[service.icon]
             return (

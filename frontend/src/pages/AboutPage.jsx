@@ -1,5 +1,6 @@
 import { Share2, Globe, PlayCircle } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
+import GallerySection from '../components/gallery/GallerySection'
 import TestimonialsSection from '../components/home/TestimonialsSection'
 import { SITE, fullAddress } from '../config/site'
 
@@ -74,6 +75,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+      <GallerySection />
       <TestimonialsSection />
     </div>
   )

@@ -4,7 +4,7 @@ import { TESTIMONIALS } from '../../config/site'
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-20 sm:py-28">
+    <section id="testimonials" className="pt-8 pb-8 sm:pt-10 sm:pb-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Testimonials"

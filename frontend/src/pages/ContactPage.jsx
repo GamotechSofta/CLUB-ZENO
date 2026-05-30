@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import EnquiryForm from '../components/forms/EnquiryForm'
+import WhatsAppIcon from '../components/ui/WhatsAppIcon'
 import { SITE, fullAddress, telUrl, whatsappUrl } from '../config/site'
 
 export default function ContactPage() {
@@ -11,7 +12,7 @@ export default function ContactPage() {
           badge="Contact"
           title="Get in"
           highlight="Touch"
-          subtitle="Send an enquiry or reach us directly. We respond quickly on WhatsApp and phone."
+          subtitle="Send a message or reach us directly. We respond quickly on WhatsApp and phone."
         />
 
         <div className="grid lg:grid-cols-5 gap-10">
@@ -47,13 +48,13 @@ export default function ContactPage() {
               href={whatsappUrl()}
               target="_blank"
               rel="noreferrer"
-              className="block rounded-2xl zeno-gradient p-6 text-center font-semibold hover:opacity-90 transition"
+              className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366] p-6 text-center font-semibold text-white transition hover:bg-[#20bd5a]"
             >
+              <WhatsAppIcon className="h-6 w-6" />
               Chat on WhatsApp
             </a>
           </div>
           <div className="lg:col-span-3">
-            <h3 className="text-xl font-bold mb-4">Enquiry Form</h3>
             <EnquiryForm />
           </div>
         </div>

@@ -1,5 +1,6 @@
-import { Phone, MessageCircle } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import { telUrl, whatsappUrl } from '../../config/site'
+import WhatsAppIcon from '../ui/WhatsAppIcon'
 
 export default function FloatingActions() {
   return (
@@ -8,11 +9,11 @@ export default function FloatingActions() {
         href={whatsappUrl()}
         target="_blank"
         rel="noreferrer"
-        className="group flex h-14 w-14 items-center justify-center rounded-full zeno-gradient zeno-glow shadow-xl transition hover:scale-105"
+        className="group flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/40 transition hover:scale-105 hover:bg-[#20bd5a]"
         aria-label="Chat on WhatsApp"
         title="WhatsApp"
       >
-        <MessageCircle className="h-7 w-7 text-white" />
+        <WhatsAppIcon className="h-8 w-8" />
       </a>
       <a
         href={telUrl()}

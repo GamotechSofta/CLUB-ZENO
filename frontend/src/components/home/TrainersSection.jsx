@@ -4,7 +4,7 @@ import { TRAINERS } from '../../config/site'
 
 export default function TrainersSection() {
   return (
-    <section id="trainers" className="py-20 sm:py-28">
+    <section id="trainers" className="pt-8 pb-8 sm:pt-10 sm:pb-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Expert Trainers"
@@ -13,7 +13,7 @@ export default function TrainersSection() {
           subtitle="Our certified trainers bring years of expertise and passion to help you achieve your best self at CLUB ZENO."
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {TRAINERS.map((trainer, i) => (
             <article
               key={trainer.name}
@@ -36,9 +36,9 @@ export default function TrainersSection() {
                   <Share2 className="h-4 w-4" />
                 </a>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="text-lg font-bold">{trainer.name}</h3>
-                <p className="text-sm text-cyan-400">{trainer.role}</p>
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5">
+                <h3 className="text-sm sm:text-lg font-bold leading-tight">{trainer.name}</h3>
+                <p className="text-xs sm:text-sm text-cyan-400 line-clamp-2">{trainer.role}</p>
               </div>
             </article>
           ))}

@@ -4,7 +4,7 @@ import ServicesSection from '../components/home/ServicesSection'
 import TrainersSection from '../components/home/TrainersSection'
 import PricingSection from '../components/home/PricingSection'
 import TestimonialsSection from '../components/home/TestimonialsSection'
-import TrialBooking from '../components/forms/TrialBooking'
+import EnquirySection from '../components/forms/EnquirySection'
 
 export default function HomePage() {
   return (
@@ -15,7 +15,7 @@ export default function HomePage() {
       <TrainersSection />
       <PricingSection />
       <TestimonialsSection />
-      <TrialBooking />
+      <EnquirySection />
     </>
   )
 }

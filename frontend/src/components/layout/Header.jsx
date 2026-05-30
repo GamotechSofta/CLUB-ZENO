@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { LogIn, Menu, X } from 'lucide-react'
-import { SITE } from '../../config/site'
+import Logo from '../ui/Logo'
 
 const navLinks = [
   { to: '/#about', label: 'About', hash: true },
@@ -28,12 +28,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3 backdrop-blur-xl sm:px-6">
-          <Link to="/" className="flex items-center gap-2.5 shrink-0">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg zeno-gradient text-sm font-black">
-              Z
-            </span>
-            <span className="text-lg font-bold tracking-wide">{SITE.name}</span>
-          </Link>
+          <Logo className="h-9 w-auto max-w-[150px] sm:h-10 sm:max-w-[190px]" />
 
           <ul className="hidden lg:flex items-center gap-1">
             {navLinks.map(({ to, label, hash }) => (
@@ -69,7 +64,7 @@ export default function Header() {
             className="hidden sm:inline-flex items-center gap-2 rounded-full zeno-gradient px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
           >
             <LogIn className="h-4 w-4" />
-            Enquire Now
+            Contact Now
           </Link>
 
           <button
@@ -112,7 +107,7 @@ export default function Header() {
                   className="mt-2 block rounded-full zeno-gradient px-4 py-3 text-center font-semibold"
                   onClick={() => setOpen(false)}
                 >
-                  Enquire Now
+                  Contact Now
                 </Link>
               </li>
             </ul>

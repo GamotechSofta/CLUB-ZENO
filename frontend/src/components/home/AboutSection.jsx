@@ -11,7 +11,7 @@ const iconMap = {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 sm:py-28 relative">
+    <section id="about" className="pt-8 pb-8 sm:pt-10 sm:pb-10 relative">
       <div className="absolute right-0 top-1/4 h-48 w-1 zeno-gradient rounded-full opacity-60 hidden lg:block" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

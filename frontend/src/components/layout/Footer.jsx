@@ -1,21 +1,20 @@
 import { Link } from 'react-router-dom'
 import { Share2, Globe, PlayCircle, MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { SITE, fullAddress, telUrl } from '../../config/site'
+import Logo from '../ui/Logo'
 
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
     <footer className="border-t border-white/10 bg-[#030306]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-12 sm:pt-10 sm:pb-14">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2.5 mb-4">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg zeno-gradient font-black">
-                Z
-              </span>
-              <span className="text-xl font-bold">{SITE.name}</span>
-            </div>
+            <Logo
+              className="h-10 w-auto max-w-[200px] sm:h-11 sm:max-w-[220px] mb-4"
+              link
+            />
             <p className="text-sm text-[#9ca3af] leading-relaxed mb-4">
               {SITE.tagline}. Premium gym on Wardha Road, Nagpur — opposite Westside
               Mall.
@@ -71,12 +70,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/contact" className="hover:text-cyan-400 transition">
-                  Contact & Enquiry
+                  Contact
                 </Link>
               </li>
               <li>
-                <a href="/#trial" className="hover:text-cyan-400 transition">
-                  Book Free Trial
+                <a href="/#contact" className="hover:text-cyan-400 transition">
+                  Book Trial / Contact
                 </a>
               </li>
             </ul>

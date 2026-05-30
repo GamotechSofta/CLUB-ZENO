@@ -6,21 +6,13 @@ const initial = {
   name: '',
   phone: '',
   email: '',
+  address: '',
   interest: 'membership',
   message: '',
 }
 
-export default function EnquiryForm({
-  trialData = null,
-  onSuccess,
-  compact = false,
-}) {
-  const [form, setForm] = useState({
-    ...initial,
-    message: trialData
-      ? `Trial booking follow-up.\nPreferred date: ${trialData.date}\nPreferred time: ${trialData.time}\nGoal: ${trialData.goal}`
-      : '',
-  })
+export default function EnquiryForm({ compact = false }) {
+  const [form, setForm] = useState(initial)
   const [submitted, setSubmitted] = useState(false)
 
   const update = (e) => {
@@ -28,14 +20,12 @@ export default function EnquiryForm({
   }
 
   const buildWhatsAppMessage = () => {
-    let msg = `*Enquiry — ${SITE.name}*\n`
+    let msg = `*Contact — ${SITE.name}*\n`
     msg += `Name: ${form.name}\n`
     msg += `Phone: ${form.phone}\n`
     if (form.email) msg += `Email: ${form.email}\n`
+    if (form.address) msg += `Address: ${form.address}\n`
     msg += `Interest: ${form.interest}\n`
-    if (trialData) {
-      msg += `\n*Trial Booking:*\nDate: ${trialData.date}\nTime: ${trialData.time}\nGoal: ${trialData.goal}\n`
-    }
     if (form.message) msg += `\nMessage: ${form.message}`
     return msg
   }
@@ -44,7 +34,6 @@ export default function EnquiryForm({
     e.preventDefault()
     window.open(whatsappUrl(buildWhatsAppMessage()), '_blank', 'noreferrer')
     setSubmitted(true)
-    onSuccess?.()
   }
 
   if (submitted) {
@@ -52,7 +41,7 @@ export default function EnquiryForm({
       <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/10 p-8 text-center">
         <p className="text-lg font-semibold text-white">Thank you!</p>
         <p className="mt-2 text-[#9ca3af]">
-          Your enquiry was sent via WhatsApp. Our team will contact you shortly.
+          Your message was sent via WhatsApp. Our team will contact you shortly.
         </p>
       </div>
     )
@@ -63,11 +52,6 @@ export default function EnquiryForm({
       onSubmit={handleSubmit}
       className={`space-y-4 ${compact ? '' : 'rounded-2xl border border-white/10 bg-[#0c0c12] p-6 sm:p-8'}`}
     >
-      {trialData && (
-        <p className="text-sm text-cyan-400 rounded-lg bg-cyan-500/10 px-4 py-3 border border-cyan-500/20">
-          Complete your enquiry after your trial booking details below.
-        </p>
-      )}
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className="block text-sm text-[#9ca3af] mb-1.5">Full Name *</label>
@@ -105,6 +89,17 @@ export default function EnquiryForm({
         />
       </div>
       <div>
+        <label className="block text-sm text-[#9ca3af] mb-1.5">Address *</label>
+        <input
+          name="address"
+          required
+          value={form.address}
+          onChange={update}
+          className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50"
+          placeholder="Your area / full address in Nagpur"
+        />
+      </div>
+      <div>
         <label className="block text-sm text-[#9ca3af] mb-1.5">I&apos;m interested in</label>
         <select
           name="interest"
@@ -135,11 +130,8 @@ export default function EnquiryForm({
         className="w-full inline-flex items-center justify-center gap-2 rounded-full zeno-gradient py-3.5 font-semibold text-white transition hover:opacity-90"
       >
         <Send className="h-5 w-5" />
-        Send Enquiry via WhatsApp
+        Send via WhatsApp
       </button>
-      <p className="text-xs text-center text-[#6b7280]">
-        Submissions open WhatsApp with your details — update number in site config.
-      </p>
     </form>
   )
 }
