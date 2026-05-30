@@ -6,12 +6,13 @@ export default function SectionHeading({
   highlight,
   subtitle,
   align = 'center',
+  className = '',
 }) {
   const alignClass =
     align === 'center' ? 'text-center mx-auto' : 'text-left'
 
   return (
-    <div className={`max-w-3xl mb-14 ${alignClass}`}>
+    <div className={`max-w-3xl mb-14 ${alignClass} ${className}`}>
       {badge && (
         <div
           className={`inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm mb-5 ${align === 'center' ? 'mx-auto' : ''}`}

@@ -26,3 +26,9 @@ export function scrollToSectionWhenReady(hash) {
   const delays = [50, 150, 350, 600]
   delays.forEach((ms) => window.setTimeout(run, ms))
 }
+
+/** Logo / Home — always land on home page top */
+export function goToHomeTop(navigate) {
+  navigate({ pathname: '/' })
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}

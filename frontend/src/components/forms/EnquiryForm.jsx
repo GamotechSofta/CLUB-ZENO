@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { CheckCircle2, Loader2, Send, X } from 'lucide-react'
+import { ENQUIRY_INTEREST_OPTIONS } from '../../config/servicesContent'
 import { SITE, WEB3FORMS_ENDPOINT, getWeb3FormsAccessKey } from '../../config/site'
 
 const initial = {
@@ -7,7 +8,7 @@ const initial = {
   phone: '',
   email: '',
   address: '',
-  interest: 'membership',
+  interest: 'all',
   message: '',
 }
 
@@ -170,11 +171,11 @@ export default function EnquiryForm({ compact = false }) {
           disabled={status === 'sending'}
           className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-500/50 disabled:opacity-60"
         >
-          <option value="membership">Membership</option>
-          <option value="trial">Free Trial</option>
-          <option value="personal-training">Personal Training</option>
-          <option value="corporate">Corporate Plan</option>
-          <option value="other">Other</option>
+          {ENQUIRY_INTEREST_OPTIONS.map(({ value, label }) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
         </select>
       </div>
       <div>
