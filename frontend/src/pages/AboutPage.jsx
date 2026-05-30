@@ -2,7 +2,7 @@ import { Share2, Globe, PlayCircle } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import GallerySection from '../components/gallery/GallerySection'
 import TestimonialsSection from '../components/home/TestimonialsSection'
-import { SITE, fullAddress } from '../config/site'
+import { ABOUT_IMAGE, SITE, fullAddress } from '../config/site'
 
 export default function AboutPage() {
   return (
@@ -13,15 +13,17 @@ export default function AboutPage() {
           title="Nagpur's Premium"
           highlight="Rooftop Gym"
           subtitle={`Located at ${SITE.landmark}, we are redefining fitness in Nagpur with technology-driven training and world-class facilities.`}
+          className="!mb-8 sm:!mb-10"
         />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-0">
           <img
-            src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=500&fit=crop"
-            alt="About CLUB ZENO"
-            className="rounded-2xl zeno-border-glow w-full object-cover aspect-video"
+            src={ABOUT_IMAGE}
+            alt="CLUB ZENO gym interior — premium rooftop fitness Nagpur"
+            className="rounded-2xl zeno-border-glow w-full object-cover aspect-[4/3]"
+            loading="lazy"
           />
-          <div className="space-y-4 text-[#9ca3af] leading-relaxed">
+          <div className="space-y-4 text-[#9ca3af] leading-relaxed text-center lg:text-left">
             <p>
               <strong className="text-white">{SITE.name}</strong> is a corporate rooftop
               fitness center offering AI modes, kettlebell training, CrossFit HIIT,
@@ -42,7 +44,7 @@ export default function AboutPage() {
 
             <div className="pt-6">
               <h3 className="text-white font-semibold mb-4">Follow Us</h3>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
                 <a
                   href={SITE.social.instagram}
                   target="_blank"

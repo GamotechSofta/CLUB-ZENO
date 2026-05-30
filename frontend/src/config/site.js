@@ -37,6 +37,9 @@ export const SITE = {
   ],
 }
 
+export const ABOUT_IMAGE =
+  'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140252/5604e4d3-b77e-454c-bc0e-a3bead1324f2.png'
+
 export const fullAddress = `${SITE.address.line1}, ${SITE.address.line2}, ${SITE.address.city}, ${SITE.address.state} – ${SITE.address.pincode}`
 
 export const mapsQuery = encodeURIComponent(

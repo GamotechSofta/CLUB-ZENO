@@ -1,61 +1,48 @@
-import clubVisual from '../assets/ChatGPT Image May 30, 2026, 03_12_32 PM.png'
-
-/** Add more images to public/images/gallery/ and list them here */
+/** Inside CLUB ZENO — gallery images (Cloudinary) */
 export const GALLERY_IMAGES = [
   {
-    id: 'brand',
-    src: clubVisual,
-    alt: 'CLUB ZENO — premium fitness Nagpur',
-    category: 'Training',
+    id: 'gym-1',
+    src: 'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140243/d13a632a-b199-4aa1-b089-37f3fa54a38b.png',
+    alt: 'CLUB ZENO gym floor with illuminated branding',
   },
   {
-    id: 'floor-1',
-    src: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&q=80',
-    alt: 'Free weights and strength zone',
-    category: 'Facility',
+    id: 'gym-2',
+    src: 'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140309/7a078fcf-94ff-406a-8a18-e39ac05d8a86.png',
+    alt: 'Dumbbell rack and strength training zone',
   },
   {
-    id: 'floor-2',
-    src: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=600&fit=crop&q=80',
-    alt: 'Modern gym floor at CLUB ZENO',
-    category: 'Facility',
+    id: 'gym-3',
+    src: 'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140295/7956add6-66aa-468c-b4c9-134d5ef0a97c.png',
+    alt: 'Main gym floor at CLUB ZENO',
   },
   {
-    id: 'hiit',
-    src: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80',
-    alt: 'CrossFit HIIT training session',
-    category: 'CrossFit',
+    id: 'gym-4',
+    src: 'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140291/c2ad41e1-30b5-483d-b81c-d4587d5e5619.png',
+    alt: 'Premium strength equipment',
   },
   {
-    id: 'workout-1',
-    src: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=600&fit=crop&q=80',
-    alt: 'Member workout training',
-    category: 'Training',
+    id: 'gym-5',
+    src: 'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140283/76dfdd87-355e-4104-8a1c-da2ec7489a10.png',
+    alt: 'Weightlifting platform and racks',
   },
   {
-    id: 'workout-2',
-    src: 'https://images.unsplash.com/photo-1574680096145-d05b474e2153?w=800&h=600&fit=crop&q=80',
-    alt: 'Strength and conditioning',
-    category: 'Training',
+    id: 'gym-6',
+    src: 'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140277/3f3c4b41-6beb-4dfd-a18c-de078ea94ad5.png',
+    alt: 'Functional training area',
   },
   {
-    id: 'cardio',
-    src: 'https://images.unsplash.com/photo-1540497077202-7bf8a379ad5d?w=800&h=600&fit=crop&q=80',
-    alt: 'Cardio and functional training area',
-    category: 'Facility',
+    id: 'gym-7',
+    src: 'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140271/ab1b9148-2a8d-42fe-855a-34d46ee00c2c.png',
+    alt: 'Bumper plates and free weights',
   },
   {
-    id: 'recovery',
-    src: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop&q=80',
-    alt: 'Recovery and wellness',
-    category: 'Recovery',
+    id: 'gym-8',
+    src: 'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140260/fe833a56-25ef-4cdc-8fd7-cba2fbb710b6.png',
+    alt: 'Cardio section with city views',
   },
   {
-    id: 'group',
-    src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80',
-    alt: 'Group fitness class',
-    category: 'CrossFit',
+    id: 'gym-9',
+    src: 'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140252/5604e4d3-b77e-454c-bc0e-a3bead1324f2.png',
+    alt: 'Power rack and training zone',
   },
 ]
-
-export const GALLERY_CATEGORIES = ['All', 'Facility', 'Training', 'CrossFit', 'Recovery']

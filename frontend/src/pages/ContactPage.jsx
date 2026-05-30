@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import EnquiryForm from '../components/forms/EnquiryForm'
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from '../components/ui/SocialIcons'
 import WhatsAppIcon from '../components/ui/WhatsAppIcon'
 import { SITE, fullAddress, telUrl, whatsappUrl } from '../config/site'
 
@@ -44,6 +45,51 @@ export default function ContactPage() {
                 </li>
               </ul>
             </div>
+
+            <div className="rounded-2xl border border-white/10 bg-[#0c0c12] p-5">
+              <h3 className="font-semibold mb-4 text-white text-center sm:text-left">
+                Follow Us
+              </h3>
+              <div className="flex justify-center gap-3 sm:flex-col sm:gap-2 sm:justify-stretch">
+                <a
+                  href={SITE.social.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="flex items-center justify-center rounded-xl border border-white/10 p-3.5 transition hover:border-cyan-500/50 sm:justify-start sm:gap-3 sm:px-4 sm:py-3"
+                >
+                  <InstagramIcon className="h-6 w-6 shrink-0 text-cyan-400 sm:h-5 sm:w-5" />
+                  <span className="hidden sm:inline text-sm text-[#9ca3af] hover:text-white">
+                    Instagram
+                  </span>
+                </a>
+                <a
+                  href={SITE.social.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook"
+                  className="flex items-center justify-center rounded-xl border border-white/10 p-3.5 transition hover:border-cyan-500/50 sm:justify-start sm:gap-3 sm:px-4 sm:py-3"
+                >
+                  <FacebookIcon className="h-6 w-6 shrink-0 text-cyan-400 sm:h-5 sm:w-5" />
+                  <span className="hidden sm:inline text-sm text-[#9ca3af] hover:text-white">
+                    Facebook
+                  </span>
+                </a>
+                <a
+                  href={SITE.social.youtube}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="YouTube"
+                  className="flex items-center justify-center rounded-xl border border-white/10 p-3.5 transition hover:border-cyan-500/50 sm:justify-start sm:gap-3 sm:px-4 sm:py-3"
+                >
+                  <YoutubeIcon className="h-6 w-6 shrink-0 text-cyan-400 sm:h-5 sm:w-5" />
+                  <span className="hidden sm:inline text-sm text-[#9ca3af] hover:text-white">
+                    YouTube
+                  </span>
+                </a>
+              </div>
+            </div>
+
             <a
               href={whatsappUrl()}
               target="_blank"
