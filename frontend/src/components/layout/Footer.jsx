@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#030306]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-12 sm:pt-10 sm:pb-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <Logo
               className="h-10 w-auto max-w-[200px] sm:h-11 sm:max-w-[220px] mb-4"
@@ -118,21 +118,11 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          <div>
-            <h3 className="font-semibold mb-4">Local SEO Keywords</h3>
-            <p className="text-xs text-[#6b7280] leading-relaxed">
-              {SITE.gbpKeywords.join(' · ')}
-            </p>
-          </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-sm text-[#6b7280]">
+        <div className="mt-12 pt-8 border-t border-white/10 text-sm text-[#6b7280]">
           <p>
             © {year} {SITE.name}. All rights reserved.
-          </p>
-          <p>
-            Gym in Nagpur · Fitness center Wardha Road · Opposite Westside Mall
           </p>
         </div>
       </div>
