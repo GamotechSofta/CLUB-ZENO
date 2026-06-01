@@ -36,7 +36,7 @@ export const SERVICE_ITEMS = [
       'Progress reviews & goal tracking',
     ],
     image:
-      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50e?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780311107/5accfbf5-67f9-4e04-b742-b1fed921eee8.png',
     duration: '45–60 min sessions',
     level: 'All levels',
   },
@@ -54,7 +54,7 @@ export const SERVICE_ITEMS = [
       'Lower cost than 1:1 training',
     ],
     image:
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780311598/cfa8405a-9ac2-458b-9526-c50e277a4896.png',
     duration: '50 min sessions',
     level: 'Beginner to intermediate',
   },
@@ -72,7 +72,7 @@ export const SERVICE_ITEMS = [
       'Scalable intensity for all levels',
     ],
     image:
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780311694/df8a3f64-993a-4d5d-a8e2-b3585ee33747.png',
     duration: '40–45 min',
     level: 'Intermediate+',
   },
@@ -90,7 +90,7 @@ export const SERVICE_ITEMS = [
       'Suitable for beginners welcome',
     ],
     image:
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780311735/265beb46-3070-4097-9d5e-6bb8d9c7d27a.png',
     duration: '60 min',
     level: 'All levels',
   },
@@ -108,7 +108,7 @@ export const SERVICE_ITEMS = [
       'Group motivation & energy',
     ],
     image:
-      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780311844/06d97f1a-2324-4e13-a969-b7446b2c73dc.png',
     duration: '45 min',
     level: 'All levels',
   },
@@ -126,7 +126,7 @@ export const SERVICE_ITEMS = [
       'Pairs well with strength training',
     ],
     image:
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780299824/07114ecb-17ff-479d-80e0-3960eddf582e.png',
     duration: '50 min',
     level: 'All levels',
   },
@@ -144,7 +144,7 @@ export const SERVICE_ITEMS = [
       'No prior boxing experience needed',
     ],
     image:
-      'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780312335/dd1be395-c18f-4bcd-8135-f8a4501a744c.png',
     duration: '45 min',
     level: 'All levels',
   },

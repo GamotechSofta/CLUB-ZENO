@@ -18,16 +18,29 @@ function ServiceBlock({ service, imageFirst }) {
       className="scroll-mt-28 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center"
     >
       <div
-        className={`relative overflow-hidden rounded-2xl border-2 border-dashed border-[#22c55e]/40 aspect-[4/3] flex flex-col ${
-          imageFirst ? 'lg:order-1' : 'lg:order-2'
-        }`}
+        className={`relative overflow-hidden rounded-2xl border-2 ${
+          service.image ? 'border-white/10' : 'border-dashed border-[#22c55e]/40'
+        } aspect-[4/3] flex flex-col ${imageFirst ? 'lg:order-1' : 'lg:order-2'}`}
       >
-        <div className="flex flex-1 items-center justify-center bg-gradient-to-br from-[#12121a] via-[#0c0c12] to-[#080810]">
-          <p className="text-xs sm:text-sm font-medium uppercase tracking-widest text-white/30 px-4 text-center">
-            Image placeholder
-          </p>
-        </div>
-        <p className="border-t border-dashed border-white/10 bg-[#0c0c12] px-4 py-3 text-sm font-medium text-white/80">
+        {service.image ? (
+          <img
+            src={service.image}
+            alt={service.title}
+            className="h-full w-full flex-1 object-cover object-center"
+            loading="lazy"
+          />
+        ) : (
+          <div className="flex flex-1 items-center justify-center bg-gradient-to-br from-[#12121a] via-[#0c0c12] to-[#080810]">
+            <p className="text-xs sm:text-sm font-medium uppercase tracking-widest text-white/30 px-4 text-center">
+              Image placeholder
+            </p>
+          </div>
+        )}
+        <p
+          className={`bg-[#0c0c12] px-4 py-3 text-sm font-medium text-white/80 ${
+            service.image ? 'border-t border-white/10' : 'border-t border-dashed border-white/10'
+          }`}
+        >
           {service.tagline}
         </p>
       </div>
