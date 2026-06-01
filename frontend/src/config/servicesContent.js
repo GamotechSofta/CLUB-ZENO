@@ -162,7 +162,7 @@ export const SERVICE_ITEMS = [
       'Works with your training program',
     ],
     image:
-      'https://images.unsplash.com/photo-1490645935967-10de28ba7033?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780316263/e58035d7-73fb-4b7e-adcb-d2480638acb6.png',
     duration: 'Consultation + follow-ups',
     level: 'All members',
   },
