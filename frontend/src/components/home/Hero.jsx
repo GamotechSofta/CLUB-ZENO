@@ -3,6 +3,44 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import GradientText from '../ui/GradientText'
 import { HERO_SLIDES } from '../../config/site'
 
+function SliderControls({ index, setIndex, onPrev, onNext }) {
+  return (
+    <div className="flex items-center gap-4 sm:gap-5">
+      <button
+        type="button"
+        onClick={onPrev}
+        className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur transition hover:bg-white/15"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="h-5 w-5 pointer-events-none" />
+      </button>
+
+      <div className="flex items-center gap-2">
+        {HERO_SLIDES.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setIndex(i)}
+            className={`rounded-full transition-all ${
+              i === index ? 'h-2 w-8 zeno-gradient' : 'h-2 w-2 bg-white/40 hover:bg-white/60'
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      <button
+        type="button"
+        onClick={onNext}
+        className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur transition hover:bg-white/15"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="h-5 w-5 pointer-events-none" />
+      </button>
+    </div>
+  )
+}
+
 export default function Hero() {
   const [index, setIndex] = useState(0)
 
@@ -22,7 +60,7 @@ export default function Hero() {
   const slide = HERO_SLIDES[index]
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative flex items-start overflow-hidden md:min-h-screen md:items-center">
       {HERO_SLIDES.map((s, i) => (
         <div
           key={s.id}
@@ -50,7 +88,7 @@ export default function Hero() {
         </div>
       ))}
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-28 w-full pointer-events-none">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-8 sm:pt-32 md:pb-28 w-full pointer-events-none">
         <div className="max-w-2xl sm:max-w-xl md:max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/50 px-4 py-1.5 text-sm mb-6 backdrop-blur">
             <span className="h-2 w-2 rounded-full zeno-gradient" />
@@ -63,56 +101,25 @@ export default function Hero() {
           <p className="mt-6 text-lg text-white/75 max-w-xl leading-relaxed">
             {slide.subtitle}
           </p>
-          <div className="mt-10 flex flex-wrap gap-4 pointer-events-auto">
+          <div className="mt-10 pointer-events-auto">
             <a
               href="#contact"
               className="inline-flex rounded-full zeno-gradient px-8 py-3.5 font-semibold text-white shadow-lg zeno-glow transition hover:opacity-90"
             >
               Join Now
             </a>
-            <a
-              href="#contact"
-              className="inline-flex rounded-full border border-white/30 px-8 py-3.5 font-semibold text-white transition hover:bg-white/10"
-            >
-              Contact Us
-            </a>
+          </div>
+
+          {/* Mobile: controls sit under CTAs, not at viewport bottom */}
+          <div className="mt-8 flex justify-center pointer-events-auto md:hidden">
+            <SliderControls index={index} setIndex={setIndex} onPrev={prev} onNext={next} />
           </div>
         </div>
       </div>
 
-      {/* Slider controls below headline — arrows no longer cover title text */}
-      <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-4 sm:gap-5">
-        <button
-          type="button"
-          onClick={prev}
-          className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur transition hover:bg-white/15"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="h-5 w-5 pointer-events-none" />
-        </button>
-
-        <div className="flex items-center gap-2">
-          {HERO_SLIDES.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setIndex(i)}
-              className={`rounded-full transition-all ${
-                i === index ? 'h-2 w-8 zeno-gradient' : 'h-2 w-2 bg-white/40 hover:bg-white/60'
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
-
-        <button
-          type="button"
-          onClick={next}
-          className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur transition hover:bg-white/15"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="h-5 w-5 pointer-events-none" />
-        </button>
+      {/* Desktop: controls at bottom of hero */}
+      <div className="absolute bottom-8 left-1/2 z-30 hidden -translate-x-1/2 md:flex">
+        <SliderControls index={index} setIndex={setIndex} onPrev={prev} onNext={next} />
       </div>
     </section>
   )

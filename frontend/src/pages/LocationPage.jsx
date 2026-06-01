@@ -17,7 +17,7 @@ export default function LocationPage() {
           badge="Find Us"
           title="Visit"
           highlight="CLUB ZENO"
-          subtitle="Corporate rooftop gym opposite Westside Mall on Wardha Road, Nagpur."
+          subtitle="K10 Corporate, Top Floor — Jai Prakash Nagar, opposite Westside Mall on Wardha Road, Nagpur."
         />
 
         <div className="grid lg:grid-cols-2 gap-10">
@@ -74,11 +74,6 @@ export default function LocationPage() {
                 WhatsApp for Directions
               </a>
             </div>
-
-            <p className="text-xs text-[#6b7280]">
-              Replace the map embed URL in <code className="text-cyan-400">site.js</code>{' '}
-              with your exact Google Business Profile embed link for best GBP accuracy.
-            </p>
           </div>
 
           <div className="rounded-2xl overflow-hidden border border-white/10 aspect-square lg:aspect-auto lg:min-h-[480px]">

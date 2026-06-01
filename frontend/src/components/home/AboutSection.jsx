@@ -11,7 +11,7 @@ const iconMap = {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="pt-8 pb-8 sm:pt-10 sm:pb-10 relative">
+    <section id="about" className="pt-2 pb-8 sm:pt-10 sm:pb-10 relative">
       <div className="absolute right-0 top-1/4 h-48 w-1 zeno-gradient rounded-full opacity-60 hidden lg:block" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -35,7 +35,7 @@ export default function AboutSection() {
               Where Strength Meets <GradientText>Passion</GradientText>
             </h2>
             <p className="mt-6 text-[#9ca3af] leading-relaxed">
-              {`CLUB ZENO is Nagpur's premium rooftop fitness destination on Wardha Road — opposite Westside Mall. We combine AI-guided training modes, CrossFit HIIT, kettlebell work, and recovery with sauna under one roof.`}
+              {`CLUB ZENO is Nagpur's premium fitness destination at K10 Corporate, Top Floor, Jai Prakash Nagar — opposite Westside Mall on Wardha Road (landmark: above Skechers). We combine AI-guided training modes, CrossFit HIIT, kettlebell work, and recovery with sauna under one roof.`}
             </p>
             <p className="mt-4 text-[#9ca3af] leading-relaxed">
               Our certified trainers deliver personalized programs in a high-energy,

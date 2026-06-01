@@ -8,14 +8,14 @@ export const SITE = {
   whatsapp: '919699237168',
   email: 'info@clubzeno.in',
   address: {
-    line1: 'Corporate Rooftop, Opposite Westside Mall',
-    line2: 'Wardha Road, Jai Prakash Nagar, New Sneh Nagar',
+    line1: 'Plot No. 10, K10 Corporate, Top Floor',
+    line2: 'Jai Prakash Nagar, Opposite Westside Mall, Wardha Road',
     city: 'Nagpur',
     state: 'Maharashtra',
     pincode: '440015',
     country: 'India',
   },
-  landmark: 'Opposite Westside Mall, Wardha Road',
+  landmark: 'Above Skechers',
   geo: { lat: 21.1068, lng: 79.0722 },
   hours: '6:00 AM – 10:00 PM',
   social: {
@@ -42,8 +42,9 @@ export const ABOUT_IMAGE =
 
 export const fullAddress = `${SITE.address.line1}, ${SITE.address.line2}, ${SITE.address.city}, ${SITE.address.state} – ${SITE.address.pincode}`
 
+// Map embed/search — unchanged query that already pinned the correct location
 export const mapsQuery = encodeURIComponent(
-  `${SITE.name}, ${SITE.landmark}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.pincode}`,
+  `${SITE.name}, Opposite Westside Mall, Wardha Road, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.pincode}`,
 )
 
 export const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&hl=en&z=16&output=embed`
@@ -125,21 +126,63 @@ export const PRICING = [
 
 export const TESTIMONIALS = [
   {
-    name: 'Vikram Patil',
-    role: 'Member since 2023',
-    text: 'CLUB ZENO transformed my routine. The rooftop vibe, expert coaches, and CrossFit HIIT sessions are unmatched in Nagpur.',
-    rating: 5,
-  },
-  {
-    name: 'Sneha Reddy',
+    name: 'Rishikesh Wakchaure',
     role: 'Member since 2024',
-    text: 'Best gym near Westside Mall. AI-guided workouts and recovery sauna keep me consistent. Highly recommend the trial session!',
+    text: 'Coaches here actually watch your form. CrossFit HIIT sessions are tough but I have never felt stronger.',
     rating: 5,
   },
   {
-    name: 'Amit Joshi',
+    name: 'Shreya Deshmukh',
+    role: 'Member since 2023',
+    text: 'Clean facility, friendly staff, and a serious workout vibe. Best decision after shifting to Wardha Road.',
+    rating: 5,
+  },
+  {
+    name: 'Saurabh Mahajan',
     role: 'Member since 2022',
-    text: 'Professional trainers, clean facility, and real results. The compound movement program built strength I never had before.',
+    text: 'Personal training helped me fix shoulder pain and build real strength. Trainers know what they are doing.',
+    rating: 5,
+  },
+  {
+    name: 'Sneha Patil',
+    role: 'Member since 2024',
+    text: 'Love the recovery zone and sauna after heavy leg days. Keeps me consistent through Nagpur summers.',
+    rating: 5,
+  },
+  {
+    name: 'Nikhil Mathure',
+    role: 'Member since 2023',
+    text: 'Kettlebell and compound movement blocks are top notch. No overcrowding even in peak evening hours.',
+    rating: 5,
+  },
+  {
+    name: 'Aarya Chavan',
+    role: 'Member since 2024',
+    text: 'Started with the free trial and stayed. AI modes plus coach guidance make every session structured.',
+    rating: 5,
+  },
+  {
+    name: 'Roshan Choudhary',
+    role: 'Member since 2022',
+    text: 'Corporate plan for our team — flexible timings and solid equipment. Easy to find above Skechers too.',
+    rating: 5,
+  },
+  {
+    name: 'Kiara Sharma',
+    role: 'Member since 2023',
+    text: 'Slider pilates and HIIT combo changed my stamina completely. Staff is supportive, not intimidating.',
+    rating: 5,
+  },
+  {
+    name: 'Prajwal Nehe',
+    role: 'Member since 2024',
+    text: 'Genuine Nagpur gym with premium feel. Trainers push you without ego — results show in eight weeks.',
+    rating: 5,
+  },
+  {
+    name: 'Prajwal Kamdi',
+    role: 'Member since 2023',
+    text: 'Worth the drive from Sitabuldi. Westside Mall landmark makes it simple — worth every rupee.',
     rating: 5,
   },
 ]
@@ -149,9 +192,9 @@ export const HERO_SLIDES = [
   {
     id: 'hero-1',
     image:
-      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140380/1e752683-ff74-46f1-867b-6338a54ade30.png',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780306897/97f467a1-ede7-441b-9b64-45d7c1c0af0e.png',
     imageMobile:
-      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140764/b58ff1a3-bb83-41ec-a303-eb3423b2a458.png',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780306897/97f467a1-ede7-441b-9b64-45d7c1c0af0e.png',
     badge: 'Premium Fitness Center',
     title: 'Build Your',
     highlight: 'Dream Physique',
@@ -161,9 +204,9 @@ export const HERO_SLIDES = [
   {
     id: 'hero-2',
     image:
-      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140404/a6a5f79f-e8eb-4819-bdbf-3fc2d0c1010e.png',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780307472/351c5f29-b249-4d6e-88c5-b12dc1c89eb4.png',
     imageMobile:
-      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780141014/15789dcf-ab5d-4d3f-a403-9f8fb7f35b13.png',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780307472/351c5f29-b249-4d6e-88c5-b12dc1c89eb4.png',
     badge: 'Opposite Westside Mall',
     title: 'Train at',
     highlight: 'CLUB ZENO',
@@ -173,9 +216,9 @@ export const HERO_SLIDES = [
   {
     id: 'hero-3',
     image:
-      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780140442/4b8cfd66-6b27-405c-99cf-9152ce91df0a.png',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780307859/d2d885d0-b3fb-4ef1-8882-ae639be10ef6.png',
     imageMobile:
-      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780141072/b4401047-622b-4199-8721-74f502b1a667.png',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780308167/6ebabdd0-c973-4541-8c73-f4d569d91d79.png',
     badge: 'Book a Free Trial',
     title: 'Start Your',
     highlight: 'Fitness Journey',

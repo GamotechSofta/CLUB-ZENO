@@ -16,8 +16,8 @@ export default function Footer() {
               link
             />
             <p className="text-sm text-[#9ca3af] leading-relaxed mb-4">
-              {SITE.tagline}. Premium gym on Wardha Road, Nagpur — opposite Westside
-              Mall.
+              {SITE.tagline}. K10 Corporate, Top Floor, Wardha Road, Nagpur — opposite
+              Westside Mall.
             </p>
             <div className="flex gap-3">
               <a
