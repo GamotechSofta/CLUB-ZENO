@@ -69,30 +69,10 @@ export function getWeb3FormsAccessKey() {
 }
 
 export const TRAINERS = [
-  {
-    id: 'trainer-1',
-    name: 'Arjun Mehta',
-    role: 'Head Strength Coach',
-    social: { instagram: '#', twitter: '#' },
-  },
-  {
-    id: 'trainer-2',
-    name: 'Priya Sharma',
-    role: 'HIIT & Pilates Specialist',
-    social: { instagram: '#', twitter: '#' },
-  },
-  {
-    id: 'trainer-3',
-    name: 'Rahul Deshmukh',
-    role: 'CrossFit & Conditioning',
-    social: { instagram: '#', twitter: '#' },
-  },
-  {
-    id: 'trainer-4',
-    name: 'Ananya Kulkarni',
-    role: 'Recovery & Nutrition',
-    social: { instagram: '#', twitter: '#' },
-  },
+  { id: 'nitesh-dabli', name: 'Nitesh Dabli' },
+  { id: 'harshal-telange', name: 'Harshal Telange' },
+  { id: 'aryan-kothekar', name: 'Aryan Kothekar' },
+  { id: 'tanushree-hatwar', name: 'Tanushree Hatwar' },
 ]
 
 export const PRICING = [

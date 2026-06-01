@@ -19,10 +19,14 @@ export default function WhatWeOfferSection() {
               key={item.id}
               className="group relative min-h-[260px] sm:min-h-[340px] overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c12] transition duration-500 hover:border-cyan-500/40 hover:shadow-[0_0_40px_rgba(1,108,251,0.15)]"
             >
-              <div className="absolute inset-0 bottom-[6.5rem] sm:bottom-[8.5rem] flex items-center justify-center border-b border-dashed border-white/10 bg-gradient-to-br from-[#12121a] via-[#0c0c12] to-[#080810]">
-                <p className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-white/30 px-1 text-center">
-                  Image placeholder
-                </p>
+              <div className="absolute inset-0 bottom-[6.5rem] sm:bottom-[8.5rem] overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c12]/90 via-[#0c0c12]/20 to-transparent" />
               </div>
 
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c0c12] to-[#0c0c12]/95 p-3 sm:p-6">

@@ -28,7 +28,7 @@ export const TRAINING_ZONES = [
       'In the Machine Zone, you receive prescribed inputs such as reps and sets, and a Head Coach monitors your performance.',
     duration: '20 Minutes',
     mainImage:
-      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780298526/c1a71f1c-8419-457f-8b01-a34b966f88fb.png',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780306897/97f467a1-ede7-441b-9b64-45d7c1c0af0e.png',
     insetImage:
       'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780300324/355f62d7-5888-471b-9647-8b45d9b839be.png',
   },
