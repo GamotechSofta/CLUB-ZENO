@@ -6,7 +6,6 @@ export const SITE = {
   phone: '+919699237168',
   phoneDisplay: '+91 96992 37168',
   whatsapp: '919699237168',
-  email: 'info@clubzeno.in',
   address: {
     line1: 'Plot No. 10, K10 Corporate, Top Floor',
     line2: 'Jai Prakash Nagar, Opposite Westside Mall, Wardha Road',

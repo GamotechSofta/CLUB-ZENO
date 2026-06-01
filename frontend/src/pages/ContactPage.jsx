@@ -1,7 +1,7 @@
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { MapPin, Phone as PhoneIcon } from 'lucide-react'
 import SectionHeading from '../components/ui/SectionHeading'
 import EnquiryForm from '../components/forms/EnquiryForm'
-import { FacebookIcon, InstagramIcon, YoutubeIcon } from '../components/ui/SocialIcons'
+import { InstagramIcon } from '../components/ui/SocialIcons'
 import WhatsAppIcon from '../components/ui/WhatsAppIcon'
 import { SITE, fullAddress, telUrl, whatsappUrl } from '../config/site'
 
@@ -30,75 +30,43 @@ export default function ContactPage() {
                     href={telUrl()}
                     className="flex gap-3 text-[#9ca3af] hover:text-white transition"
                   >
-                    <Phone className="h-5 w-5 text-cyan-400 shrink-0" />
+                    <PhoneIcon className="h-5 w-5 text-cyan-400 shrink-0" />
                     {SITE.phoneDisplay}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`mailto:${SITE.email}`}
-                    className="flex gap-3 text-[#9ca3af] hover:text-white transition"
-                  >
-                    <Mail className="h-5 w-5 text-cyan-400 shrink-0" />
-                    {SITE.email}
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0c0c12] p-5">
-              <h3 className="font-semibold mb-4 text-white text-center sm:text-left">
-                Follow Us
-              </h3>
-              <div className="flex justify-center gap-3 sm:flex-col sm:gap-2 sm:justify-stretch">
+            <div className="rounded-2xl border border-white/10 bg-[#0c0c12] p-6">
+              <h3 className="font-semibold mb-4">Connect With Us</h3>
+              <div className="flex flex-wrap gap-3">
                 <a
                   href={SITE.social.instagram}
                   target="_blank"
                   rel="noreferrer"
+                  className="inline-flex rounded-lg border border-white/10 p-2.5 text-[#E4405F] hover:border-[#E4405F]/60 hover:bg-[#E4405F]/10 transition"
                   aria-label="Instagram"
-                  className="flex items-center justify-center rounded-xl border border-white/10 p-3.5 transition hover:border-cyan-500/50 sm:justify-start sm:gap-3 sm:px-4 sm:py-3"
                 >
-                  <InstagramIcon className="h-6 w-6 shrink-0 text-cyan-400 sm:h-5 sm:w-5" />
-                  <span className="hidden sm:inline text-sm text-[#9ca3af] hover:text-white">
-                    Instagram
-                  </span>
+                  <InstagramIcon className="h-5 w-5" />
                 </a>
                 <a
-                  href={SITE.social.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Facebook"
-                  className="flex items-center justify-center rounded-xl border border-white/10 p-3.5 transition hover:border-cyan-500/50 sm:justify-start sm:gap-3 sm:px-4 sm:py-3"
+                  href={telUrl()}
+                  className="inline-flex rounded-lg border border-white/10 p-2.5 text-cyan-400 hover:border-cyan-400/60 hover:bg-cyan-400/10 transition"
+                  aria-label="Call CLUB ZENO"
                 >
-                  <FacebookIcon className="h-6 w-6 shrink-0 text-cyan-400 sm:h-5 sm:w-5" />
-                  <span className="hidden sm:inline text-sm text-[#9ca3af] hover:text-white">
-                    Facebook
-                  </span>
+                  <PhoneIcon className="h-5 w-5" />
                 </a>
                 <a
-                  href={SITE.social.youtube}
+                  href={whatsappUrl()}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="YouTube"
-                  className="flex items-center justify-center rounded-xl border border-white/10 p-3.5 transition hover:border-cyan-500/50 sm:justify-start sm:gap-3 sm:px-4 sm:py-3"
+                  className="inline-flex rounded-lg border border-white/10 p-2.5 text-[#25D366] hover:border-[#25D366]/60 hover:bg-[#25D366]/10 transition"
+                  aria-label="Chat on WhatsApp"
                 >
-                  <YoutubeIcon className="h-6 w-6 shrink-0 text-cyan-400 sm:h-5 sm:w-5" />
-                  <span className="hidden sm:inline text-sm text-[#9ca3af] hover:text-white">
-                    YouTube
-                  </span>
+                  <WhatsAppIcon className="h-5 w-5" />
                 </a>
               </div>
             </div>
-
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center justify-center gap-3 rounded-2xl bg-[#25D366] p-6 text-center font-semibold text-white transition hover:bg-[#20bd5a]"
-            >
-              <WhatsAppIcon className="h-6 w-6" />
-              Chat on WhatsApp
-            </a>
           </div>
           <div className="lg:col-span-3">
             <EnquiryForm />

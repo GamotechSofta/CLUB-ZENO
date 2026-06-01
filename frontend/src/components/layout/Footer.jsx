@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Share2, Globe, PlayCircle, MapPin, Phone, Mail, Clock } from 'lucide-react'
-import { SITE, fullAddress, telUrl } from '../../config/site'
+import { MapPin, Phone as PhoneIcon, Clock } from 'lucide-react'
+import { SITE, fullAddress, telUrl, whatsappUrl } from '../../config/site'
 import Logo from '../ui/Logo'
+import { InstagramIcon } from '../ui/SocialIcons'
+import WhatsAppIcon from '../ui/WhatsAppIcon'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -19,33 +21,31 @@ export default function Footer() {
               {SITE.tagline}. K10 Corporate, Top Floor, Wardha Road, Nagpur — opposite
               Westside Mall.
             </p>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <a
                 href={SITE.social.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg border border-white/10 p-2.5 text-white/70 hover:border-cyan-500/50 hover:text-cyan-400 transition"
+                className="inline-flex rounded-lg border border-white/10 p-2.5 text-[#E4405F] hover:border-[#E4405F]/60 hover:bg-[#E4405F]/10 transition"
                 aria-label="Instagram"
               >
-                <Share2 className="h-5 w-5" />
+                <InstagramIcon className="h-5 w-5" />
               </a>
               <a
-                href={SITE.social.facebook}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-lg border border-white/10 p-2.5 text-white/70 hover:border-cyan-500/50 hover:text-cyan-400 transition"
-                aria-label="Facebook"
+                href={telUrl()}
+                className="inline-flex rounded-lg border border-white/10 p-2.5 text-cyan-400 hover:border-cyan-400/60 hover:bg-cyan-400/10 transition"
+                aria-label="Call CLUB ZENO"
               >
-                <Globe className="h-5 w-5" />
+                <PhoneIcon className="h-5 w-5" />
               </a>
               <a
-                href={SITE.social.youtube}
+                href={whatsappUrl()}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg border border-white/10 p-2.5 text-white/70 hover:border-cyan-500/50 hover:text-cyan-400 transition"
-                aria-label="YouTube"
+                className="inline-flex rounded-lg border border-white/10 p-2.5 text-[#25D366] hover:border-[#25D366]/60 hover:bg-[#25D366]/10 transition"
+                aria-label="Chat on WhatsApp"
               >
-                <PlayCircle className="h-5 w-5" />
+                <WhatsAppIcon className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -98,18 +98,9 @@ export default function Footer() {
                 <span>{SITE.landmark}</span>
               </li>
               <li className="flex gap-2">
-                <Phone className="h-4 w-4 shrink-0 text-cyan-400" />
+                <PhoneIcon className="h-4 w-4 shrink-0 text-cyan-400" />
                 <a href={telUrl()} className="hover:text-white transition">
                   {SITE.phoneDisplay}
-                </a>
-              </li>
-              <li className="flex gap-2">
-                <Mail className="h-4 w-4 shrink-0 text-cyan-400" />
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="hover:text-white transition"
-                >
-                  {SITE.email}
                 </a>
               </li>
               <li className="flex gap-2">
