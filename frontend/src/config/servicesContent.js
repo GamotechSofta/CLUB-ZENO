@@ -180,7 +180,7 @@ export const SERVICE_ITEMS = [
       'Book after tough training weeks',
     ],
     image:
-      'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780316362/b61bebcc-11b8-4778-95a9-4d7a6839d140.png',
     duration: '30–60 min',
     level: 'All members',
   },
@@ -198,7 +198,7 @@ export const SERVICE_ITEMS = [
       'Complements intense training',
     ],
     image:
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&h=600&fit=crop',
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780316366/786a6167-4084-4bab-b940-d4516adbdb81.png',
     duration: '30–45 min',
     level: 'All levels',
   },
