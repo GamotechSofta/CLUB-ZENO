@@ -12,15 +12,24 @@ export default function TrainersSection() {
           subtitle="Our certified trainers bring years of expertise and passion to help you achieve your best self at CLUB ZENO."
         />
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+        <div className="grid grid-cols-2 gap-3 sm:mx-auto sm:max-w-4xl sm:grid-cols-3 sm:gap-6">
           {TRAINERS.map((trainer) => (
             <article
               key={trainer.id}
-              className="flex items-center justify-center rounded-2xl border border-white/10 bg-[#0c0c12] px-4 py-8 sm:py-10 text-center transition hover:border-cyan-500/40"
+              className="group overflow-hidden rounded-xl border border-white/10 bg-[#0c0c12] transition hover:border-cyan-500/40 sm:rounded-2xl"
             >
-              <h3 className="text-sm sm:text-lg font-bold leading-snug text-white">
-                {trainer.name}
-              </h3>
+              <div className="aspect-[3/4] overflow-hidden bg-[#030306]">
+                <img
+                  src={trainer.image}
+                  alt={`${trainer.name}, CLUB ZENO mentor`}
+                  className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="px-2 py-3 text-center sm:px-4 sm:py-5">
+                <h3 className="text-sm font-bold text-white sm:text-lg">{trainer.name}</h3>
+              </div>
             </article>
           ))}
         </div>

@@ -13,7 +13,7 @@ export default function GallerySection() {
       i === null ? null : (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length,
     )
   }, [])
-
+ 
   const goNext = useCallback(() => {
     setLightboxIndex((i) => (i === null ? null : (i + 1) % GALLERY_IMAGES.length))
   }, [])

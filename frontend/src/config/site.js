@@ -69,10 +69,24 @@ export function getWeb3FormsAccessKey() {
 }
 
 export const TRAINERS = [
-  { id: 'nitesh-dabli', name: 'Nitesh Dabli' },
-  { id: 'harshal-telange', name: 'Harshal Telange' },
-  { id: 'aryan-kothekar', name: 'Aryan Kothekar' },
-  { id: 'tanushree-hatwar', name: 'Tanushree Hatwar' },
+  {
+    id: 'tanushree',
+    name: 'Tanushree',
+    image:
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780556249/ChatGPTImageJun3202609_02_38P_ikadsa.jpg',
+  },
+  {
+    id: 'nitesh',
+    name: 'Nitesh',
+    image:
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780556315/ChatGPTImageJun3202608_56_03P_nabyk6.jpg',
+  },
+  {
+    id: 'harshal',
+    name: 'Harshal',
+    image:
+      'https://res.cloudinary.com/dbzeao0ff/image/upload/v1780556249/color_corrected_original_face_bright_tone.jpg_1_g3kaat.jpg',
+  },
 ]
 
 export const PRICING = [
@@ -125,63 +139,45 @@ export const PRICING = [
 
 export const TESTIMONIALS = [
   {
-    name: 'Rishikesh Wakchaure',
+    name: 'Ketan Jaiswal',
     role: 'Member since 2024',
     text: 'Coaches here actually watch your form. CrossFit HIIT sessions are tough but I have never felt stronger.',
     rating: 5,
   },
   {
-    name: 'Shreya Deshmukh',
+    name: 'Vedant Dharpure',
     role: 'Member since 2023',
     text: 'Clean facility, friendly staff, and a serious workout vibe. Best decision after shifting to Wardha Road.',
     rating: 5,
   },
   {
-    name: 'Saurabh Mahajan',
+    name: 'Ved Kalode',
     role: 'Member since 2022',
     text: 'Personal training helped me fix shoulder pain and build real strength. Trainers know what they are doing.',
     rating: 5,
   },
   {
-    name: 'Sneha Patil',
+    name: 'Shahu Keware',
     role: 'Member since 2024',
     text: 'Love the recovery zone and sauna after heavy leg days. Keeps me consistent through Nagpur summers.',
     rating: 5,
   },
   {
-    name: 'Nikhil Mathure',
+    name: 'Kunal Kedia',
     role: 'Member since 2023',
     text: 'Kettlebell and compound movement blocks are top notch. No overcrowding even in peak evening hours.',
     rating: 5,
   },
   {
-    name: 'Aarya Chavan',
+    name: 'Mugdha Gangane',
     role: 'Member since 2024',
     text: 'Started with the free trial and stayed. AI modes plus coach guidance make every session structured.',
     rating: 5,
   },
   {
-    name: 'Roshan Choudhary',
+    name: 'Surendra Tiwari',
     role: 'Member since 2022',
-    text: 'Corporate plan for our team — flexible timings and solid equipment. Easy to find above Skechers too.',
-    rating: 5,
-  },
-  {
-    name: 'Kiara Sharma',
-    role: 'Member since 2023',
-    text: 'Slider pilates and HIIT combo changed my stamina completely. Staff is supportive, not intimidating.',
-    rating: 5,
-  },
-  {
-    name: 'Prajwal Nehe',
-    role: 'Member since 2024',
     text: 'Genuine Nagpur gym with premium feel. Trainers push you without ego — results show in eight weeks.',
-    rating: 5,
-  },
-  {
-    name: 'Prajwal Kamdi',
-    role: 'Member since 2023',
-    text: 'Worth the drive from Sitabuldi. Westside Mall landmark makes it simple — worth every rupee.',
     rating: 5,
   },
 ]
