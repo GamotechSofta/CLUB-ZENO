@@ -16,7 +16,8 @@ export const SITE = {
   },
   landmark: 'Above Skechers',
   geo: { lat: 21.1068, lng: 79.0722 },
-  hours: '6:00 AM – 10:00 PM',
+  hours: 'morning 6am to 11am evening 5pm to 10pm',
+  hoursShort: '6AM–11AM · 5PM–10PM',
   social: {
     instagram: 'https://www.instagram.com/clubzeno',
     facebook: 'https://www.facebook.com/clubzeno',
@@ -219,11 +220,4 @@ export const HERO_SLIDES = [
     highlight: 'Fitness Journey',
     subtitle: 'Book a trial session today and experience Nagpur’s premium rooftop gym.',
   },
-]
-
-export const STATS = [
-  { icon: 'users', value: '2,500+', label: 'Active Members' },
-  { icon: 'award', value: '15+', label: 'Expert Trainers' },
-  { icon: 'clock', value: '6AM–10PM', label: 'Open Hours' },
-  { icon: 'trending-up', value: '98%', label: 'Success Rate' },
 ]

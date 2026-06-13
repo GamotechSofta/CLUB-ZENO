@@ -1,13 +1,6 @@
-import { Award, Users, Clock, TrendingUp } from 'lucide-react'
+import { Clock } from 'lucide-react'
 import GradientText from '../ui/GradientText'
-import { ABOUT_IMAGE, STATS } from '../../config/site'
-
-const iconMap = {
-  users: Users,
-  award: Award,
-  clock: Clock,
-  'trending-up': TrendingUp,
-}
+import { ABOUT_IMAGE, SITE } from '../../config/site'
 
 export default function AboutSection() {
   return (
@@ -22,11 +15,6 @@ export default function AboutSection() {
                 alt="CLUB ZENO gym interior Nagpur"
                 className="w-full aspect-[4/3] object-cover"
               />
-            </div>
-            <div className="absolute -bottom-6 -right-4 sm:right-6 rounded-xl border border-white/10 bg-[#0c0c12]/95 backdrop-blur p-5 zeno-glow max-w-[200px]">
-              <Award className="h-8 w-8 text-cyan-400 mb-2" />
-              <p className="text-3xl font-bold">10+</p>
-              <p className="text-sm text-[#9ca3af]">Years of Excellence</p>
             </div>
           </div>
 
@@ -43,17 +31,13 @@ export default function AboutSection() {
               slider pilates.
             </p>
 
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
-              {STATS.map(({ icon, value, label }) => {
-                const Icon = iconMap[icon]
-                return (
-                  <div key={label}>
-                    <Icon className="h-5 w-5 text-cyan-400 mb-2" />
-                    <p className="text-xl sm:text-2xl font-bold">{value}</p>
-                    <p className="text-xs sm:text-sm text-[#6b7280] mt-1">{label}</p>
-                  </div>
-                )
-              })}
+            <div className="mt-10 inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+              <Clock className="h-5 w-5 shrink-0 text-cyan-400" aria-hidden />
+              <p className="text-sm sm:text-base leading-none">
+                <span className="font-semibold text-white">Open Hours</span>
+                <span className="mx-2 text-[#6b7280]">·</span>
+                <span className="text-[#9ca3af]">{SITE.hoursShort}</span>
+              </p>
             </div>
           </div>
         </div>

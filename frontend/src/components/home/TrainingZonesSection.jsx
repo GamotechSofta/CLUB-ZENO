@@ -31,7 +31,7 @@ function ZoneCard({ zone }) {
   const isDesign = zone.id === 'how-we-design'
 
   return (
-    <article className="relative overflow-hidden rounded-2xl sm:rounded-3xl border-2 border-cyan-400/50 shadow-[0_0_30px_rgba(1,108,251,0.12)] min-h-[320px] sm:min-h-[360px] lg:min-h-[400px]">
+    <article className="relative overflow-hidden rounded-2xl sm:rounded-3xl border-2 border-cyan-400/50 shadow-[0_0_30px_rgba(1,108,251,0.12)] min-h-[340px] sm:min-h-[400px] lg:min-h-[440px]">
       {/* Background images */}
       {isDesign ? (
         <div className="absolute inset-0 grid grid-cols-2">
@@ -57,7 +57,7 @@ function ZoneCard({ zone }) {
             loading="lazy"
           />
           {hasInset && (
-            <div className="absolute top-[42%] right-3 sm:right-4 lg:top-[38%] z-[1] w-[34%] max-w-[130px] sm:max-w-[150px] aspect-[4/5] overflow-hidden rounded-lg border-2 border-cyan-400/60 shadow-lg">
+            <div className="absolute top-[42%] right-4 sm:right-6 lg:top-[38%] z-[1] w-[38%] max-w-[160px] sm:max-w-[200px] lg:max-w-[220px] aspect-[4/5] overflow-hidden rounded-lg border-2 border-cyan-400/60 shadow-lg">
               <img
                 src={zone.insetImage}
                 alt=""
@@ -115,7 +115,7 @@ export default function TrainingZonesSection() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#030a18]/80 via-transparent to-[#030306] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-4xl lg:max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-8 sm:mb-10">
           {TRAINING_ZONES_INTRO.title}{' '}
           <GradientText>{TRAINING_ZONES_INTRO.highlight}</GradientText>{' '}

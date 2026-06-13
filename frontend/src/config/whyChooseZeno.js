@@ -3,14 +3,16 @@
 export const WHY_CHOOSE_ROWS = [
   {
     id: 'crowd',
-    icon: 'users',
+    zenoIcon: 'users',
+    ordinaryIcon: 'user-x',
     zeno: 'OPEN FOR ALL TYPES OF CROWD',
     highlights: [],
     ordinary: 'CROWD WITHOUT FOCUS OR DIRECTION.',
   },
   {
     id: 'clarity',
-    icon: 'star',
+    zenoIcon: 'star',
+    ordinaryIcon: 'circle-help',
     zeno: 'YOU GET CLARITY ABOUT YOUR JOURNEY',
     highlights: ['CLARITY', 'YOUR JOURNEY'],
     ordinary:
@@ -18,7 +20,8 @@ export const WHY_CHOOSE_ROWS = [
   },
   {
     id: 'addition',
-    icon: 'trending-up',
+    zenoIcon: 'trending-up',
+    ordinaryIcon: 'trending-down',
     zeno: 'FITNESS BECOMES ADDITION TO MAKE YOU OPTIMAL',
     highlights: ['ADDITION', 'OPTIMAL'],
     ordinary: 'BECOMES ANOTHER RESPONSIBILITY.',
@@ -26,21 +29,24 @@ export const WHY_CHOOSE_ROWS = [
   },
   {
     id: 'equipment',
-    icon: 'dumbbell',
+    zenoIcon: 'dumbbell',
+    ordinaryIcon: 'weight',
     zeno: 'MODERN STATE OF ART EQUIPMENT',
     highlights: ['MODERN'],
     ordinary: 'TRADITIONAL EQUIPPED',
   },
   {
     id: 'programming',
-    icon: 'clipboard-list',
+    zenoIcon: 'clipboard-list',
+    ordinaryIcon: 'clipboard-x',
     zeno: 'RESULT BASED PRACTICAL AND PERSONAL PROGRAMMING & JOURNALING',
     highlights: ['RESULT BASED'],
     ordinary: 'SHORT TERM WORKOUT GUIDANCE & TYPICAL DIET / SOLUTIONS',
   },
   {
     id: 'lifestyle',
-    icon: 'heart-handshake',
+    zenoIcon: 'heart-handshake',
+    ordinaryIcon: 'heart-crack',
     zeno: 'WE CHANGE YOUR LIFESTYLE TO ACHIEVE LONG LIFE & FITNESS LEVELS.',
     highlights: ['LIFESTYLE', 'FITNESS LEVELS.'],
     ordinary:
@@ -48,7 +54,8 @@ export const WHY_CHOOSE_ROWS = [
   },
   {
     id: 'facilities',
-    icon: 'shower-head',
+    zenoIcon: 'shower-head',
+    ordinaryIcon: 'building-2',
     zeno: 'SHOWERS, LOCKERS, SAUNA STEAM ROOM',
     highlights: [],
     ordinary: 'BASIC FACILITIES WITHOUT FOCUS ON RECOVERY.',
